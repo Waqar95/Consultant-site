@@ -238,3 +238,28 @@
     padding-bottom: 64px;
   }
 }
+
+/* ---------- Section labels & titles ---------- */
+.section-label {
+  display: inline-block;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  color: var(--color-accent);
+  background: rgba(20, 184, 166, 0.1);
+  border: 1px solid rgba(20, 184, 166, 0.35);
+  padding: 6px 10px;
+  border-radius: 999px;
+  margin-bottom: 10px;
+}
+
+.section-title {
+  margin-bottom: 8px;
+}
+
+.section-lead {
+  margin-bottom: 16px;
+  color: var(--color-muted);
+  max-width: 62ch;
+}

@@ -1,16 +1,14 @@
 <!-- Topbar / Header -->
-<header class="site-header">
+<header class="site-header" role="banner">
   <div class="container header-inner">
     <!-- Left: Brand -->
     <a href="/" class="brand" aria-label="Elite Consulting Home">
-      <!-- A simple text logo for now; we’ll swap with an image later -->
       <span class="brand-mark">EC</span>
       <span class="brand-text">Elite Consulting</span>
     </a>
 
     <!-- Center/Right: Main menu (desktop/tablet) -->
     <nav class="main-nav" aria-label="Primary">
-      <!-- Anchor links map to section IDs below -->
       <a href="#about">About</a>
       <a href="#services">Services</a>
       <a href="#why">Why Us</a>
@@ -22,17 +20,16 @@
     <!-- CTA (desktop/tablet). On mobile we’ll show in bottom nav. -->
     <a class="btn btn-accent header-cta" href="#contact">Get a Proposal</a>
 
-    <!-- Mobile menu toggle (placeholder for now; static layout works without JS) -->
+    <!-- Mobile menu toggle (placeholder for now) -->
     <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
-      <!-- Simple icon (we’ll wire up later if needed) -->
       <span></span><span></span><span></span>
     </button>
   </div>
 </header>
 
-<main>
+<main role="main">
   <!-- Hero Section -->
-  <section id="hero" class="section">
+  <section id="hero" class="section" aria-labelledby="hero-title">
     <div class="container">
       <div
         class="hero grid grid-2"
@@ -41,7 +38,9 @@
         <!-- Left: foreground text overlay -->
         <div class="hero-overlay">
           <p class="eyebrow">Strategy • Growth • Digital</p>
-          <h1>Consulting That <em>Actually</em> Moves the Needle</h1>
+          <h1 id="hero-title">
+            Consulting That <em>Actually</em> Moves the Needle
+          </h1>
           <p>
             We help SMEs and startups achieve measurable growth through
             <strong>strategy</strong>, <strong>branding</strong>, and
@@ -56,7 +55,6 @@
 
         <!-- Right: foreground image suggestion (device/work scene) -->
         <figure class="hero-figure" aria-label="Consultant at work">
-          <!-- Use an accessible alt describing the image purpose, not 'image' -->
           <img
             src="/assets/hero-foreground.png"
             alt="Consultant reviewing growth dashboard on a laptop"
@@ -67,10 +65,11 @@
   </section>
 
   <!-- About Section -->
-  <section id="about" class="section">
+  <section id="about" class="section" aria-labelledby="about-title">
     <div class="container grid grid-2">
       <div class="stack-16">
-        <h2>About Us</h2>
+        <span class="section-label">About</span>
+        <h2 id="about-title" class="section-title">About Us</h2>
         <p>
           Elite Consulting partners with entrepreneurs and leadership teams to
           clarify strategy, sharpen positioning, and operationalize digital
@@ -102,10 +101,11 @@
   </section>
 
   <!-- Services Section -->
-  <section id="services" class="section">
+  <section id="services" class="section" aria-labelledby="services-title">
     <div class="container">
-      <h2 class="center">Services</h2>
-      <p class="center text-muted">Tailored consulting to unlock growth.</p>
+      <span class="section-label center">Services</span>
+      <h2 id="services-title" class="center section-title">Services</h2>
+      <p class="center section-lead">Tailored consulting to unlock growth.</p>
 
       <div class="services-grid">
         <article class="card">
@@ -155,10 +155,11 @@
   </section>
 
   <!-- Why Choose Us Section -->
-  <section id="why" class="section">
+  <section id="why" class="section" aria-labelledby="why-title">
     <div class="container grid grid-2">
       <div class="stack-16">
-        <h2>Why Choose Us</h2>
+        <span class="section-label">Why Us</span>
+        <h2 id="why-title" class="section-title">Why Choose Us</h2>
         <p>
           We combine <strong>strategy, brand, and ops</strong> under one roof so
           your plan doesn’t stall between slides and systems.
@@ -188,19 +189,20 @@
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="section">
+  <section id="contact" class="section" aria-labelledby="contact-title">
     <div class="container grid grid-2">
       <!-- Left: Heading + copy -->
       <div class="stack-16">
-        <h2>Let’s Talk</h2>
-        <p>
+        <span class="section-label">Contact</span>
+        <h2 id="contact-title" class="section-title">Let’s Talk</h2>
+        <p class="section-lead">
           Tell us about your goals. We’ll assess fit in a 20-minute discovery
           call and share a clear next step.
         </p>
         <a href="#contact" class="btn btn-accent">Book a Free Consultation</a>
       </div>
 
-      <!-- Right: Contact form (we’ll wire it up in a later step) -->
+      <!-- Right: Contact form (placeholder for now) -->
       <form class="card contact-form" aria-label="Contact form">
         <div class="grid">
           <label>
@@ -249,10 +251,17 @@
   </section>
 
   <!-- Testimonials Section -->
-  <section id="testimonials" class="section">
+  <section
+    id="testimonials"
+    class="section"
+    aria-labelledby="testimonials-title"
+  >
     <div class="container">
-      <h2 class="center">Client Testimonials</h2>
-      <p class="center text-muted">Social proof that speaks to outcomes.</p>
+      <span class="section-label center">Testimonials</span>
+      <h2 id="testimonials-title" class="center section-title">
+        Client Testimonials
+      </h2>
+      <p class="center section-lead">Social proof that speaks to outcomes.</p>
 
       <!-- Placeholder: simple grid; later we’ll add a 6–8 slide carousel -->
       <div class="testimonials-grid">
@@ -276,11 +285,11 @@
 </main>
 
 <!-- Footer -->
-<footer id="footer" class="site-footer">
+<footer id="footer" class="site-footer" role="contentinfo">
   <div class="container footer-grid">
     <!-- Col 1: logo + text -->
     <div class="footer-col">
-      <a href="/" class="brand footer-brand">
+      <a href="/" class="brand footer-brand" aria-label="Elite Consulting Home">
         <span class="brand-mark">EC</span>
         <span class="brand-text">Elite Consulting</span>
       </a>
