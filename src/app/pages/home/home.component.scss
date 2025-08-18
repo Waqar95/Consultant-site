@@ -1,0 +1,240 @@
+/* ---------- Header ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: #ffffffcc; /* translucent white */
+  backdrop-filter: saturate(180%) blur(8px);
+  border-bottom: 1px solid rgba(16, 24, 40, 0.06);
+}
+
+.header-inner {
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  align-items: center;
+  gap: 16px;
+  height: 64px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--color-primary);
+  font-weight: 700;
+}
+.brand:hover {
+  text-decoration: none;
+}
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: #fff;
+  font-weight: 700;
+}
+.brand-text {
+  letter-spacing: 0.2px;
+}
+
+.main-nav {
+  display: none;
+}
+.main-nav a {
+  margin: 0 10px;
+  color: var(--color-text);
+}
+.main-nav a:hover {
+  color: var(--color-primary);
+}
+
+.header-cta {
+  display: none;
+}
+
+.menu-toggle {
+  display: inline-grid;
+  width: 36px;
+  height: 36px;
+  gap: 4px;
+  place-content: center;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+.menu-toggle span {
+  display: block;
+  height: 2px;
+  width: 22px;
+  background: var(--color-text);
+}
+
+/* Desktop/tablet show menu + CTA */
+@media (min-width: 900px) {
+  .main-nav {
+    display: block;
+  }
+  .header-cta {
+    display: inline-block;
+  }
+  .menu-toggle {
+    display: none;
+  }
+}
+
+/* ---------- Hero tweaks ---------- */
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 12px;
+  opacity: 0.85;
+  margin-bottom: 8px;
+}
+
+.hero-figure {
+  display: none; /* hidden on mobile for simplicity */
+  align-self: stretch;
+  display: none;
+}
+.hero-figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+@media (min-width: 900px) {
+  .hero-figure {
+    display: block;
+  }
+}
+
+/* ---------- Services grid ---------- */
+.services-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 700px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1100px) {
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ---------- Testimonials grid (placeholder) ---------- */
+.testimonials-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 900px) {
+  .testimonials-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ---------- Contact form ---------- */
+.contact-form label {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.contact-form input,
+.contact-form textarea {
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(16, 24, 40, 0.12);
+  outline: none;
+  font: inherit;
+  background: #fff;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(11, 27, 59, 0.08);
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  background: #0e1f43;
+  color: #e8eef9;
+  padding-top: 48px;
+}
+.footer-grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: 1fr;
+}
+.footer-col h3 {
+  font-family: "Inter", sans-serif; /* headings inside footer simpler */
+  color: #fff;
+  margin-bottom: 8px;
+}
+.footer-col a {
+  color: #cfe3ff;
+}
+.footer-col a:hover {
+  color: #ffffff;
+}
+.footer-brand .brand-mark {
+  background: #fff;
+  color: var(--color-primary);
+}
+.tags {
+  opacity: 0.9;
+}
+.socials a {
+  margin-right: 8px;
+}
+
+@media (min-width: 900px) {
+  .footer-grid {
+    grid-template-columns: 1.2fr 1fr 1fr 1fr;
+  }
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  margin-top: 24px;
+  padding: 16px 0 28px;
+  color: #cdd7f1;
+}
+
+/* ---------- Bottom navigation (mobile) ---------- */
+.bottom-nav {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 56px;
+  background: #ffffff;
+  border-top: 1px solid rgba(16, 24, 40, 0.08);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  place-items: center;
+  z-index: 60;
+}
+.bottom-nav a {
+  color: var(--color-text);
+  font-weight: 600;
+}
+@media (min-width: 900px) {
+  .bottom-nav {
+    display: none;
+  }
+}
+
+/* Space for bottom nav on mobile so content isn’t hidden */
+@media (max-width: 899px) {
+  main {
+    padding-bottom: 64px;
+  }
+}

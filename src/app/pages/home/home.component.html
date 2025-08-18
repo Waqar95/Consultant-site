@@ -1,0 +1,341 @@
+<!-- Topbar / Header -->
+<header class="site-header">
+  <div class="container header-inner">
+    <!-- Left: Brand -->
+    <a href="/" class="brand" aria-label="Elite Consulting Home">
+      <!-- A simple text logo for now; we’ll swap with an image later -->
+      <span class="brand-mark">EC</span>
+      <span class="brand-text">Elite Consulting</span>
+    </a>
+
+    <!-- Center/Right: Main menu (desktop/tablet) -->
+    <nav class="main-nav" aria-label="Primary">
+      <!-- Anchor links map to section IDs below -->
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#why">Why Us</a>
+      <a href="#contact">Contact</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#footer">More</a>
+    </nav>
+
+    <!-- CTA (desktop/tablet). On mobile we’ll show in bottom nav. -->
+    <a class="btn btn-accent header-cta" href="#contact">Get a Proposal</a>
+
+    <!-- Mobile menu toggle (placeholder for now; static layout works without JS) -->
+    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
+      <!-- Simple icon (we’ll wire up later if needed) -->
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+  <!-- Hero Section -->
+  <section id="hero" class="section">
+    <div class="container">
+      <div
+        class="hero grid grid-2"
+        style="background-image: url('/assets/hero-bg.jpg')"
+      >
+        <!-- Left: foreground text overlay -->
+        <div class="hero-overlay">
+          <p class="eyebrow">Strategy • Growth • Digital</p>
+          <h1>Consulting That <em>Actually</em> Moves the Needle</h1>
+          <p>
+            We help SMEs and startups achieve measurable growth through
+            <strong>strategy</strong>, <strong>branding</strong>, and
+            <strong>digital transformation</strong>—without the fluff.
+          </p>
+
+          <div class="stack-16">
+            <a href="#services" class="btn btn-primary">Explore Services</a>
+            <a href="#contact" class="btn btn-outline">Book a Free Call</a>
+          </div>
+        </div>
+
+        <!-- Right: foreground image suggestion (device/work scene) -->
+        <figure class="hero-figure" aria-label="Consultant at work">
+          <!-- Use an accessible alt describing the image purpose, not 'image' -->
+          <img
+            src="/assets/hero-foreground.png"
+            alt="Consultant reviewing growth dashboard on a laptop"
+          />
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section">
+    <div class="container grid grid-2">
+      <div class="stack-16">
+        <h2>About Us</h2>
+        <p>
+          Elite Consulting partners with entrepreneurs and leadership teams to
+          clarify strategy, sharpen positioning, and operationalize digital
+          initiatives. Our boutique model means
+          <strong>senior attention</strong> on every engagement.
+        </p>
+        <p class="text-muted">
+          From discovery to delivery, we focus on ROI: validated roadmaps, lean
+          execution, and transparent KPIs.
+        </p>
+
+        <div class="card">
+          <h3>What Makes Us Different</h3>
+          <ul>
+            <li>Hands-on senior consultants — no bait-and-switch</li>
+            <li>Strategy-to-execution bridge — not just slides</li>
+            <li>Measurable outcomes — revenue, CAC/LTV, retention</li>
+          </ul>
+        </div>
+      </div>
+
+      <figure class="card">
+        <img
+          src="/assets/about.jpg"
+          alt="Collaborative workshop with a leadership team"
+        />
+      </figure>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="section">
+    <div class="container">
+      <h2 class="center">Services</h2>
+      <p class="center text-muted">Tailored consulting to unlock growth.</p>
+
+      <div class="services-grid">
+        <article class="card">
+          <h3>Growth Strategy</h3>
+          <p>
+            Market sizing, ICP definition, value prop, pricing, and GTM plans
+            grounded in data.
+          </p>
+        </article>
+        <article class="card">
+          <h3>Brand & Positioning</h3>
+          <p>
+            Messaging frameworks, visual direction, and content strategy that
+            resonate with high-value customers.
+          </p>
+        </article>
+        <article class="card">
+          <h3>Digital Transformation</h3>
+          <p>
+            Process mapping, automation, analytics, and platform selection for
+            scalable operations.
+          </p>
+        </article>
+        <article class="card">
+          <h3>Performance Marketing</h3>
+          <p>
+            Full-funnel acquisition and retention: SEO, paid media, lifecycle
+            email/SMS, and CRO.
+          </p>
+        </article>
+        <article class="card">
+          <h3>RevOps & Enablement</h3>
+          <p>
+            CRM architecture, pipeline hygiene, playbooks, and dashboards for
+            predictable growth.
+          </p>
+        </article>
+        <article class="card">
+          <h3>Advisory & Fractional</h3>
+          <p>
+            On-call advisory or fractional leadership to guide your team as you
+            scale.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us Section -->
+  <section id="why" class="section">
+    <div class="container grid grid-2">
+      <div class="stack-16">
+        <h2>Why Choose Us</h2>
+        <p>
+          We combine <strong>strategy, brand, and ops</strong> under one roof so
+          your plan doesn’t stall between slides and systems.
+        </p>
+        <ul>
+          <li>
+            <strong>Outcome-first:</strong> we define success metrics up front.
+          </li>
+          <li>
+            <strong>Lean & transparent:</strong> work in short, validated
+            sprints.
+          </li>
+          <li>
+            <strong>Enablement:</strong> we upskill your team to own the wins.
+          </li>
+        </ul>
+        <a href="#contact" class="btn btn-primary">Start Your Project</a>
+      </div>
+
+      <figure class="card">
+        <img
+          src="/assets/why.jpg"
+          alt="KPI dashboard illustrating measurable business outcomes"
+        />
+      </figure>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section">
+    <div class="container grid grid-2">
+      <!-- Left: Heading + copy -->
+      <div class="stack-16">
+        <h2>Let’s Talk</h2>
+        <p>
+          Tell us about your goals. We’ll assess fit in a 20-minute discovery
+          call and share a clear next step.
+        </p>
+        <a href="#contact" class="btn btn-accent">Book a Free Consultation</a>
+      </div>
+
+      <!-- Right: Contact form (we’ll wire it up in a later step) -->
+      <form class="card contact-form" aria-label="Contact form">
+        <div class="grid">
+          <label>
+            <span>Name</span>
+            <input
+              type="text"
+              name="name"
+              placeholder="Your full name"
+              required
+            />
+          </label>
+          <label>
+            <span>Email</span>
+            <input
+              type="email"
+              name="email"
+              placeholder="you@company.com"
+              required
+            />
+          </label>
+          <label>
+            <span>Company</span>
+            <input
+              type="text"
+              name="company"
+              placeholder="Company or project name"
+            />
+          </label>
+          <label>
+            <span>Budget</span>
+            <input type="text" name="budget" placeholder="$5k–$50k+" />
+          </label>
+        </div>
+        <label>
+          <span>Project Goals</span>
+          <textarea
+            name="message"
+            rows="5"
+            placeholder="Briefly describe your goals and timeline…"
+            required
+          ></textarea>
+        </label>
+        <button type="submit" class="btn btn-primary">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="section">
+    <div class="container">
+      <h2 class="center">Client Testimonials</h2>
+      <p class="center text-muted">Social proof that speaks to outcomes.</p>
+
+      <!-- Placeholder: simple grid; later we’ll add a 6–8 slide carousel -->
+      <div class="testimonials-grid">
+        <blockquote class="card">
+          <p>“Elite aligned our GTM and brand in 6 weeks. Pipeline up 38%.”</p>
+          <footer>— Sarah A., B2B SaaS VP Marketing</footer>
+        </blockquote>
+        <blockquote class="card">
+          <p>
+            “Finally a consulting partner who ships. Real dashboards, real ROI.”
+          </p>
+          <footer>— Daniel R., Founder</footer>
+        </blockquote>
+        <blockquote class="card">
+          <p>“Our RevOps rebuild cut sales cycle by 22%.”</p>
+          <footer>— Priya K., CRO</footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer id="footer" class="site-footer">
+  <div class="container footer-grid">
+    <!-- Col 1: logo + text -->
+    <div class="footer-col">
+      <a href="/" class="brand footer-brand">
+        <span class="brand-mark">EC</span>
+        <span class="brand-text">Elite Consulting</span>
+      </a>
+      <p class="text-muted">
+        Strategy, brand, and digital—joined up for measurable growth.
+      </p>
+    </div>
+
+    <!-- Col 2: quick links -->
+    <nav class="footer-col" aria-label="Quick links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#why">Why Us</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Col 3: tags + socials -->
+    <div class="footer-col">
+      <h3>Tags & Social</h3>
+      <p class="tags">
+        growth • strategy • branding • revops • marketing • digital
+      </p>
+      <p class="socials">
+        <a href="#" aria-label="Facebook">FB</a> ·
+        <a href="#" aria-label="Instagram">Insta</a> ·
+        <a href="#" aria-label="YouTube">YouTube</a>
+      </p>
+    </div>
+
+    <!-- Col 4: contact -->
+    <address class="footer-col">
+      <h3>Contact</h3>
+      <p>📧 hello&#64;eliteconsulting.co</p>
+      <p>📞 +1 (555) 012-3456</p>
+      <p>📍 123 Market Street, Suite 500, San Francisco, CA</p>
+    </address>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container">
+      <small
+        >© {{ year }} Elite Consulting — Design & Developed by
+        <strong>company</strong></small
+      >
+    </div>
+  </div>
+</footer>
+
+<!-- Bottom Navigation (mobile only) -->
+<nav class="bottom-nav" aria-label="Bottom navigation">
+  <a href="#hero">Home</a>
+  <a href="#services">Services</a>
+  <a href="#why">Why</a>
+  <a href="#contact">Contact</a>
+</nav>
