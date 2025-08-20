@@ -138,10 +138,31 @@ a:hover {
 .btn-primary:hover {
   box-shadow: var(--shadow-md);
 }
+
+/* Existing accent button remains (dark text). You can still use it elsewhere */
 .btn-accent {
   background: var(--color-accent);
   color: #063c37;
 }
+
+/* New: buttons for the hero per your request */
+.btn-white {
+  background: #ffffff;
+  color: var(--color-text);
+  border-color: rgba(16, 24, 40, 0.12);
+}
+.btn-white:hover {
+  background: #f7f7fb;
+}
+
+.btn-teal {
+  background: var(--color-accent); /* #14B8A6 */
+  color: #ffffff;
+}
+.btn-teal:hover {
+  filter: brightness(0.95);
+}
+
 .btn-outline {
   background: transparent;
   color: var(--color-primary);
@@ -171,20 +192,20 @@ a:hover {
 }
 
 /* ---------------------------
-   4) Hero (gradient + height utilities)
+   4) Hero (light gradient + height utilities)
 ---------------------------- */
 .hero {
-  /* Default height uses the variable with a sensible fallback */
   min-height: var(--hero-height, 70vh);
-
   display: grid;
   align-items: center;
-  background: linear-gradient(135deg, #0b1b3b 0%, #12285a 45%, #174b63 100%);
+
+  /* Light, airy gradient so dark text & buttons are visible */
+  background: linear-gradient(135deg, #f4fbff 0%, #eaf8f6 50%, #e6fffb 100%);
   border-radius: var(--radius-lg);
   overflow: hidden;
 }
 
-/* Height utilities: pick ONE by adding to the hero div */
+/* Height utilities */
 .hero--60 {
   --hero-height: 60vh;
 }
@@ -198,17 +219,16 @@ a:hover {
   --hero-height: 100vh;
 }
 
-/* Slightly reduce height on small screens for better fit */
+/* Slightly reduce height on very small screens */
 @media (max-width: 599px) {
   .hero {
     min-height: calc(var(--hero-height, 70vh) - 10vh);
   }
 }
 
-/* Keep overlay padding/colors here for consistency (overlay itself is transparent in component SCSS) */
+/* Keep overlay padding; color is set in component SCSS */
 .hero-overlay {
   padding: clamp(20px, 4vw, 48px);
-  color: #fff;
   border-radius: inherit;
 }
 
