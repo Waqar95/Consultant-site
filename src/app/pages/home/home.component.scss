@@ -85,7 +85,9 @@
   }
 }
 
-/* ---------- Hero tweaks ---------- */
+/* ---------- Hero fixes ---------- */
+/* The global gradient is defined in styles.scss on .hero.
+   To avoid the “double background” look, make the overlay transparent here. */
 .eyebrow {
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -94,18 +96,27 @@
   margin-bottom: 8px;
 }
 
-/* Right-side hero image: smaller, responsive, NO shadow */
+/* Remove overlay gradient; keep text readable on the global gradient */
+.hero .hero-overlay {
+  background: transparent; /* was a gradient before */
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.18); /* subtle boost for contrast */
+  padding: clamp(20px, 4vw, 48px);
+  border-radius: var(--radius-lg);
+}
+
+/* Right-side hero image: smaller, responsive, NO shadow, no rounded corners */
 .hero-figure {
   display: none; /* hidden on mobile for simplicity */
   align-self: center;
 }
 .hero-figure img {
-  width: 85%;
-  max-width: 460px;
+  width: 80%;
+  max-width: 360px; /* was 460px */
   height: auto;
   object-fit: contain;
-  border-radius: var(--radius-lg);
-  /* removed box-shadow */
+  border-radius: 0; /* remove rounding */
+  box-shadow: none; /* ensure no shadow */
   filter: none;
 }
 @media (min-width: 900px) {
@@ -259,7 +270,6 @@
 .section-title {
   margin-bottom: 8px;
 }
-
 .section-lead {
   margin-bottom: 16px;
   color: var(--color-muted);
