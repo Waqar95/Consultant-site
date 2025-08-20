@@ -94,17 +94,19 @@
   margin-bottom: 8px;
 }
 
+/* Right-side hero image: smaller, responsive, NO shadow */
 .hero-figure {
   display: none; /* hidden on mobile for simplicity */
-  align-self: stretch;
-  display: none;
+  align-self: center;
 }
 .hero-figure img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  width: 85%;
+  max-width: 460px;
+  height: auto;
+  object-fit: contain;
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-sm);
+  /* removed box-shadow */
+  filter: none;
 }
 @media (min-width: 900px) {
   .hero-figure {
