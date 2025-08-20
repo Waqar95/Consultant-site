@@ -2,23 +2,20 @@
    1) CSS Variables (Theme)
 ---------------------------- */
 :root {
-  /* Brand colors */
-  --color-primary: #0b1b3b; /* deep navy */
-  --color-accent: #14b8a6; /* teal accent */
-  --color-warn: #ef4444; /* soft red */
-  --color-text: #101828; /* neutral dark */
-  --color-muted: #475467; /* mid gray for secondary text */
-  --color-bg: #f7f7fb; /* subtle off-white background */
-  --color-card: #ffffff; /* panels/cards */
+  --color-primary: #0b1b3b;
+  --color-accent: #14b8a6;
+  --color-warn: #ef4444;
+  --color-text: #101828;
+  --color-muted: #475467;
+  --color-bg: #f7f7fb;
+  --color-card: #ffffff;
 
-  /* Effects & radii */
   --radius-lg: 16px;
   --radius-md: 12px;
   --radius-sm: 8px;
   --shadow-sm: 0 4px 12px rgba(16, 24, 40, 0.06);
   --shadow-md: 0 10px 24px rgba(16, 24, 40, 0.08);
 
-  /* Layout */
   --container-max: 1200px;
   --gutter: 16px;
   --section-y: 72px;
@@ -49,7 +46,6 @@ body {
   font-weight: 400;
 }
 
-/* Headings use elegant serif for contrast */
 h1,
 h2,
 h3,
@@ -59,7 +55,6 @@ h3,
   line-height: 1.2;
   color: var(--color-primary);
 }
-
 h1 {
   font-size: clamp(32px, 5vw, 56px);
 }
@@ -74,7 +69,6 @@ p {
   color: var(--color-muted);
 }
 
-/* Links */
 a {
   color: var(--color-accent);
   text-decoration: none;
@@ -104,7 +98,6 @@ a:hover {
   }
 }
 
-/* Grids */
 .grid {
   display: grid;
   gap: 24px;
@@ -118,7 +111,6 @@ a:hover {
   }
 }
 
-/* Cards & surfaces */
 .card {
   background: var(--color-card);
   border-radius: var(--radius-lg);
@@ -126,7 +118,6 @@ a:hover {
   padding: 24px;
 }
 
-/* Buttons */
 .btn {
   display: inline-block;
   padding: 12px 20px;
@@ -139,7 +130,6 @@ a:hover {
 .btn:hover {
   transform: translateY(-1px);
 }
-
 .btn-primary {
   background: var(--color-primary);
   color: #fff;
@@ -148,7 +138,6 @@ a:hover {
 .btn-primary:hover {
   box-shadow: var(--shadow-md);
 }
-
 .btn-accent {
   background: var(--color-accent);
   color: #063c37;
@@ -159,7 +148,6 @@ a:hover {
   border-color: var(--color-primary);
 }
 
-/* Helper classes */
 .text-muted {
   color: var(--color-muted);
 }
@@ -183,26 +171,42 @@ a:hover {
 }
 
 /* ---------------------------
-   4) Hero (now gradient background only)
+   4) Hero (gradient + height utilities)
 ---------------------------- */
 .hero {
-  min-height: 80vh;
+  /* Default height uses the variable with a sensible fallback */
+  min-height: var(--hero-height, 70vh);
+
   display: grid;
   align-items: center;
-  /* Elegant gradient — adjust angles/colors as you like */
   background: linear-gradient(135deg, #0b1b3b 0%, #12285a 45%, #174b63 100%);
   border-radius: var(--radius-lg);
   overflow: hidden;
 }
 
+/* Height utilities: pick ONE by adding to the hero div */
+.hero--60 {
+  --hero-height: 60vh;
+}
+.hero--70 {
+  --hero-height: 70vh;
+}
+.hero--80 {
+  --hero-height: 80vh;
+}
+.hero--100 {
+  --hero-height: 100vh;
+}
+
+/* Slightly reduce height on small screens for better fit */
+@media (max-width: 599px) {
+  .hero {
+    min-height: calc(var(--hero-height, 70vh) - 10vh);
+  }
+}
+
+/* Keep overlay padding/colors here for consistency (overlay itself is transparent in component SCSS) */
 .hero-overlay {
-  /* On gradient, we can reduce the opacity and keep legibility */
-  background: linear-gradient(
-    90deg,
-    rgba(11, 27, 59, 0.65) 0%,
-    rgba(11, 27, 59, 0.35) 50%,
-    rgba(11, 27, 59, 0) 100%
-  );
   padding: clamp(20px, 4vw, 48px);
   color: #fff;
   border-radius: inherit;
@@ -214,18 +218,16 @@ a:hover {
 main > section:not(#hero):nth-of-type(odd) {
   background: var(--color-bg);
 }
-
 main > section:not(#hero):nth-of-type(even) {
   background: #ffffff;
   box-shadow: inset 0 1px 0 rgba(16, 24, 40, 0.06),
     inset 0 -1px 0 rgba(16, 24, 40, 0.06);
 }
-
 .section + .section {
   border-top: 1px solid rgba(16, 24, 40, 0.06);
 }
 
-/* Slight tint for cards that sit on white sections so they don't disappear */
+/* Tinted cards on white sections so they don't disappear */
 main > section:not(#hero):nth-of-type(even) .card {
   background: #fcfcff;
 }

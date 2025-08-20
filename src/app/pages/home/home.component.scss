@@ -3,7 +3,7 @@
   position: sticky;
   top: 0;
   z-index: 50;
-  background: #ffffffcc; /* translucent white */
+  background: #ffffffcc;
   backdrop-filter: saturate(180%) blur(8px);
   border-bottom: 1px solid rgba(16, 24, 40, 0.06);
 }
@@ -54,7 +54,6 @@
 .header-cta {
   display: none;
 }
-
 .menu-toggle {
   display: inline-grid;
   width: 36px;
@@ -72,7 +71,6 @@
   background: var(--color-text);
 }
 
-/* Desktop/tablet show menu + CTA */
 @media (min-width: 900px) {
   .main-nav {
     display: block;
@@ -85,9 +83,7 @@
   }
 }
 
-/* ---------- Hero fixes ---------- */
-/* The global gradient is defined in styles.scss on .hero.
-   To avoid the “double background” look, make the overlay transparent here. */
+/* ---------- Hero (overlay is transparent to avoid double background) ---------- */
 .eyebrow {
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -96,27 +92,26 @@
   margin-bottom: 8px;
 }
 
-/* Remove overlay gradient; keep text readable on the global gradient */
 .hero .hero-overlay {
-  background: transparent; /* was a gradient before */
+  background: transparent; /* no extra gradient */
   color: #fff;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.18); /* subtle boost for contrast */
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.18);
   padding: clamp(20px, 4vw, 48px);
   border-radius: var(--radius-lg);
 }
 
-/* Right-side hero image: smaller, responsive, NO shadow, no rounded corners */
+/* Right-side hero image: smaller, responsive, NO shadow */
 .hero-figure {
-  display: none; /* hidden on mobile for simplicity */
+  display: none;
   align-self: center;
 }
 .hero-figure img {
   width: 80%;
-  max-width: 360px; /* was 460px */
+  max-width: 360px;
   height: auto;
   object-fit: contain;
-  border-radius: 0; /* remove rounding */
-  box-shadow: none; /* ensure no shadow */
+  border-radius: 0;
+  box-shadow: none;
   filter: none;
 }
 @media (min-width: 900px) {
@@ -142,7 +137,7 @@
   }
 }
 
-/* ---------- Testimonials grid (placeholder) ---------- */
+/* ---------- Testimonials grid ---------- */
 .testimonials-grid {
   display: grid;
   gap: 16px;
@@ -187,7 +182,7 @@
   grid-template-columns: 1fr;
 }
 .footer-col h3 {
-  font-family: "Inter", sans-serif; /* headings inside footer simpler */
+  font-family: "Inter", sans-serif;
   color: #fff;
   margin-bottom: 8px;
 }
@@ -207,13 +202,11 @@
 .socials a {
   margin-right: 8px;
 }
-
 @media (min-width: 900px) {
   .footer-grid {
     grid-template-columns: 1.2fr 1fr 1fr 1fr;
   }
 }
-
 .footer-bottom {
   border-top: 1px solid rgba(255, 255, 255, 0.15);
   margin-top: 24px;
@@ -245,7 +238,6 @@
   }
 }
 
-/* Space for bottom nav on mobile so content isn’t hidden */
 @media (max-width: 899px) {
   main {
     padding-bottom: 64px;
@@ -266,7 +258,6 @@
   border-radius: 999px;
   margin-bottom: 10px;
 }
-
 .section-title {
   margin-bottom: 8px;
 }

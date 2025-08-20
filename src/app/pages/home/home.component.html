@@ -1,13 +1,11 @@
 <!-- Topbar / Header -->
 <header class="site-header" role="banner">
   <div class="container header-inner">
-    <!-- Left: Brand -->
     <a href="/" class="brand" aria-label="Elite Consulting Home">
       <span class="brand-mark">EC</span>
       <span class="brand-text">Elite Consulting</span>
     </a>
 
-    <!-- Center/Right: Main menu (desktop/tablet) -->
     <nav class="main-nav" aria-label="Primary">
       <a href="#about">About</a>
       <a href="#services">Services</a>
@@ -17,10 +15,8 @@
       <a href="#footer">More</a>
     </nav>
 
-    <!-- CTA (desktop/tablet). On mobile we’ll show in bottom nav. -->
     <a class="btn btn-accent header-cta" href="#contact">Get a Proposal</a>
 
-    <!-- Mobile menu toggle (placeholder for now) -->
     <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -28,11 +24,12 @@
 </header>
 
 <main role="main">
-  <!-- Hero Section (now gradient background, no cover image) -->
+  <!-- Hero Section (gradient only; height controlled by hero--XX class) -->
   <section id="hero" class="section" aria-labelledby="hero-title">
     <div class="container">
-      <div class="hero grid grid-2">
-        <!-- Left: foreground text overlay -->
+      <!-- pick one: hero--60 / hero--70 / hero--80 / hero--100 -->
+      <div class="hero hero--60 grid grid-2">
+        <!-- Left: text -->
         <div class="hero-overlay">
           <p class="eyebrow">Strategy • Growth • Digital</p>
           <h1 id="hero-title">
@@ -43,14 +40,13 @@
             <strong>strategy</strong>, <strong>branding</strong>, and
             <strong>digital transformation</strong>—without the fluff.
           </p>
-
           <div class="stack-16">
             <a href="#services" class="btn btn-primary">Explore Services</a>
             <a href="#contact" class="btn btn-outline">Book a Free Call</a>
           </div>
         </div>
 
-        <!-- Right: foreground image (downsized, no shadow) -->
+        <!-- Right: image (smaller, no shadow) -->
         <figure class="hero-figure" aria-label="Consultant at work">
           <img
             src="assets/hero-foreground.png"
@@ -62,24 +58,38 @@
   </section>
 
   <!-- About Section -->
-  <section class="hero-section">
-    <div class="hero-content">
-      <div class="hero-text">
-        <p class="tagline">STRATEGY • GROWTH • DIGITAL</p>
-        <h1>Consulting That <em>Actually</em> Moves the Needle</h1>
-        <p class="description">
-          We help SMEs and startups achieve measurable growth through
-          <strong>strategy, branding, and digital transformation</strong
-          >—without the fluff.
+  <section id="about" class="section" aria-labelledby="about-title">
+    <div class="container grid grid-2">
+      <div class="stack-16">
+        <span class="section-label">About</span>
+        <h2 id="about-title" class="section-title">About Us</h2>
+        <p>
+          Elite Consulting partners with entrepreneurs and leadership teams to
+          clarify strategy, sharpen positioning, and operationalize digital
+          initiatives. Our boutique model means
+          <strong>senior attention</strong> on every engagement.
         </p>
-        <div class="buttons">
-          <button class="btn-primary">Explore Services</button>
-          <button class="btn-secondary">Book a Free Call</button>
+        <p class="text-muted">
+          From discovery to delivery, we focus on ROI: validated roadmaps, lean
+          execution, and transparent KPIs.
+        </p>
+
+        <div class="card">
+          <h3>What Makes Us Different</h3>
+          <ul>
+            <li>Hands-on senior consultants — no bait-and-switch</li>
+            <li>Strategy-to-execution bridge — not just slides</li>
+            <li>Measurable outcomes — revenue, CAC/LTV, retention</li>
+          </ul>
         </div>
       </div>
-      <div class="hero-image">
-        <img src="assets/images/consultant.png" alt="Consultant" />
-      </div>
+
+      <figure class="card">
+        <img
+          src="assets/about.jpg"
+          alt="Collaborative workshop with a leadership team"
+        />
+      </figure>
     </div>
   </section>
 
@@ -137,7 +147,7 @@
     </div>
   </section>
 
-  <!-- Why Choose Us Section -->
+  <!-- Why Choose Us -->
   <section id="why" class="section" aria-labelledby="why-title">
     <div class="container grid grid-2">
       <div class="stack-16">
@@ -171,10 +181,9 @@
     </div>
   </section>
 
-  <!-- Contact Section -->
+  <!-- Contact -->
   <section id="contact" class="section" aria-labelledby="contact-title">
     <div class="container grid grid-2">
-      <!-- Left: Heading + copy -->
       <div class="stack-16">
         <span class="section-label">Contact</span>
         <h2 id="contact-title" class="section-title">Let’s Talk</h2>
@@ -185,43 +194,39 @@
         <a href="#contact" class="btn btn-accent">Book a Free Consultation</a>
       </div>
 
-      <!-- Right: Contact form (placeholder for now) -->
       <form class="card contact-form" aria-label="Contact form">
         <div class="grid">
-          <label>
-            <span>Name</span>
-            <input
+          <label
+            ><span>Name</span
+            ><input
               type="text"
               name="name"
               placeholder="Your full name"
               required
-            />
-          </label>
-          <label>
-            <span>Email</span>
-            <input
+          /></label>
+          <label
+            ><span>Email</span
+            ><input
               type="email"
               name="email"
               placeholder="you@company.com"
               required
-            />
-          </label>
-          <label>
-            <span>Company</span>
-            <input
+          /></label>
+          <label
+            ><span>Company</span
+            ><input
               type="text"
               name="company"
               placeholder="Company or project name"
-            />
-          </label>
-          <label>
-            <span>Budget</span>
-            <input type="text" name="budget" placeholder="$5k–$50k+" />
-          </label>
+          /></label>
+          <label
+            ><span>Budget</span
+            ><input type="text" name="budget" placeholder="$5k–$50k+"
+          /></label>
         </div>
-        <label>
-          <span>Project Goals</span>
-          <textarea
+        <label
+          ><span>Project Goals</span
+          ><textarea
             name="message"
             rows="5"
             placeholder="Briefly describe your goals and timeline…"
@@ -233,7 +238,7 @@
     </div>
   </section>
 
-  <!-- Testimonials Section -->
+  <!-- Testimonials -->
   <section
     id="testimonials"
     class="section"
@@ -246,7 +251,6 @@
       </h2>
       <p class="center section-lead">Social proof that speaks to outcomes.</p>
 
-      <!-- Placeholder: simple grid; later we’ll add a 6–8 slide carousel -->
       <div class="testimonials-grid">
         <blockquote class="card">
           <p>“Elite aligned our GTM and brand in 6 weeks. Pipeline up 38%.”</p>
@@ -270,18 +274,16 @@
 <!-- Footer -->
 <footer id="footer" class="site-footer" role="contentinfo">
   <div class="container footer-grid">
-    <!-- Col 1: logo + text -->
     <div class="footer-col">
       <a href="/" class="brand footer-brand" aria-label="Elite Consulting Home">
-        <span class="brand-mark">EC</span>
-        <span class="brand-text">Elite Consulting</span>
+        <span class="brand-mark">EC</span
+        ><span class="brand-text">Elite Consulting</span>
       </a>
       <p class="text-muted">
         Strategy, brand, and digital—joined up for measurable growth.
       </p>
     </div>
 
-    <!-- Col 2: quick links -->
     <nav class="footer-col" aria-label="Quick links">
       <h3>Quick Links</h3>
       <ul>
@@ -292,7 +294,6 @@
       </ul>
     </nav>
 
-    <!-- Col 3: tags + socials -->
     <div class="footer-col">
       <h3>Tags & Social</h3>
       <p class="tags">
@@ -305,7 +306,6 @@
       </p>
     </div>
 
-    <!-- Col 4: contact -->
     <address class="footer-col">
       <h3>Contact</h3>
       <p>📧 hello&#64;eliteconsulting.co</p>
