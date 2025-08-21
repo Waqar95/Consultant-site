@@ -302,3 +302,70 @@ main > section:not(#hero):nth-of-type(even) {
   color: var(--color-muted);
   max-width: 62ch;
 }
+
+/* Base button */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+  transition: all 0.3s ease; /* smooth animations */
+}
+
+/* Button variants */
+.btn-white {
+  background-color: #ffffff;
+  color: #0f172a; /* dark text */
+  border: 2px solid #ffffff;
+}
+
+.btn-teal {
+  background-color: #14b8a6;
+  color: #ffffff;
+  border: 2px solid #14b8a6;
+}
+
+.btn-primary {
+  background-color: #0f172a;
+  color: #ffffff;
+  border: 2px solid #0f172a;
+}
+
+.btn-accent {
+  background-color: #f97316; /* orange accent */
+  color: #ffffff;
+  border: 2px solid #f97316;
+}
+
+/* Hover states — grow + color shift */
+.btn:hover {
+  transform: scale(1.05);
+}
+
+/* White button hover */
+.btn-white:hover {
+  background-color: #f1f5f9; /* light gray */
+  border-color: #f1f5f9;
+  color: #0f172a;
+}
+
+/* Teal button hover */
+.btn-teal:hover {
+  background-color: #0d9488; /* darker teal */
+  border-color: #0d9488;
+  color: #ffffff;
+}
+
+/* Primary button hover */
+.btn-primary:hover {
+  background-color: #1e293b; /* darker navy */
+  border-color: #1e293b;
+}
+
+/* Accent button hover */
+.btn-accent:hover {
+  background-color: #ea580c; /* darker orange */
+  border-color: #ea580c;
+}
