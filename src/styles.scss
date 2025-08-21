@@ -2,6 +2,7 @@
    1) CSS Variables (Theme)
 ---------------------------- */
 :root {
+  /* Colors */
   --color-primary: #0b1b3b;
   --color-accent: #14b8a6;
   --color-warn: #ef4444;
@@ -10,16 +11,39 @@
   --color-bg: #f7f7fb;
   --color-card: #ffffff;
 
+  /* Radii & Shadows */
+  --radius-xl: 20px;
   --radius-lg: 16px;
   --radius-md: 12px;
   --radius-sm: 8px;
   --shadow-sm: 0 4px 12px rgba(16, 24, 40, 0.06);
   --shadow-md: 0 10px 24px rgba(16, 24, 40, 0.08);
 
+  /* Layout */
   --container-max: 1200px;
-  --gutter: 16px;
-  --section-y: 72px;
-  --section-y-lg: 96px;
+  --gutter: 20px;
+
+  /* Spacing scale (vertical rhythm) */
+  --space-2: 2px;
+  --space-4: 4px;
+  --space-6: 6px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-20: 20px;
+  --space-24: 24px;
+  --space-28: 28px;
+  --space-32: 32px;
+  --space-40: 40px;
+  --space-48: 48px;
+  --space-56: 56px;
+  --space-64: 64px;
+  --space-72: 72px;
+  --space-96: 96px;
+
+  /* Sections */
+  --section-y: var(--space-64);
+  --section-y-lg: var(--space-96);
 }
 
 /* ---------------------------
@@ -30,7 +54,6 @@
 *::after {
   box-sizing: border-box;
 }
-
 html {
   scroll-behavior: smooth;
 }
@@ -44,28 +67,31 @@ body {
     "Segoe UI Symbol", sans-serif;
   line-height: 1.6;
   font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
+/* Type scale */
 h1,
 h2,
 h3,
 .display {
   font-family: "Playfair Display", Georgia, "Times New Roman", serif;
-  margin: 0 0 12px 0;
+  margin: 0 0 var(--space-12) 0;
   line-height: 1.2;
   color: var(--color-primary);
 }
 h1 {
-  font-size: clamp(32px, 5vw, 56px);
+  font-size: clamp(34px, 5.2vw, 56px);
 }
 h2 {
-  font-size: clamp(24px, 3.4vw, 36px);
+  font-size: clamp(26px, 3.6vw, 36px);
 }
 h3 {
-  font-size: clamp(20px, 2.6vw, 28px);
+  font-size: clamp(20px, 2.4vw, 24px);
 }
 p {
-  margin: 0 0 12px 0;
+  margin: 0 0 var(--space-12) 0;
   color: var(--color-muted);
 }
 
@@ -87,49 +113,90 @@ a:hover {
   margin: 0 auto;
 }
 
+/* Section paddings with clear rhythm */
 .section {
-  padding-top: var(--section-y);
-  padding-bottom: var(--section-y);
+  padding: var(--section-y) 0;
 }
 @media (min-width: 1024px) {
   .section {
-    padding-top: var(--section-y-lg);
-    padding-bottom: var(--section-y-lg);
+    padding: var(--section-y-lg) 0;
   }
 }
 
+/* Even/odd alternating backgrounds to separate sections */
+main > section:not(#hero):nth-of-type(odd) {
+  background: var(--color-bg);
+}
+main > section:not(#hero):nth-of-type(even) {
+  background: #ffffff;
+  box-shadow: inset 0 1px 0 rgba(16, 24, 40, 0.06),
+    inset 0 -1px 0 rgba(16, 24, 40, 0.06);
+}
+
+/* Grid helpers */
 .grid {
   display: grid;
-  gap: 24px;
+  gap: var(--space-24);
 }
 .grid-2 {
   grid-template-columns: 1fr;
 }
-@media (min-width: 900px) {
+@media (min-width: 960px) {
   .grid-2 {
     grid-template-columns: 1.1fr 0.9fr;
+    gap: var(--space-32);
   }
 }
 
+/* Vertical flow utilities (replace ad-hoc margins) */
+.flow-xs > * + * {
+  margin-top: var(--space-8);
+}
+.flow-sm > * + * {
+  margin-top: var(--space-12);
+}
+.flow-md > * + * {
+  margin-top: var(--space-16);
+}
+.flow-lg > * + * {
+  margin-top: var(--space-24);
+}
+.flow-xl > * + * {
+  margin-top: var(--space-32);
+}
+
+/* Cards */
 .card {
   background: var(--color-card);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-sm);
-  padding: 24px;
+  padding: clamp(var(--space-20), 2.5vw, var(--space-32));
 }
 
+/* Buttons (consistent sizing & states) */
 .btn {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
   padding: 12px 20px;
   border-radius: var(--radius-sm);
   font-weight: 600;
   border: 1px solid transparent;
   transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease,
-    color 0.15s ease;
+    color 0.15s ease, border-color 0.15s ease;
 }
 .btn:hover {
   transform: translateY(-1px);
 }
+.btn:active {
+  transform: translateY(0);
+}
+.btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.25);
+}
+
 .btn-primary {
   background: var(--color-primary);
   color: #fff;
@@ -139,15 +206,12 @@ a:hover {
   box-shadow: var(--shadow-md);
 }
 
-/* Accent button (existing) */
 .btn-accent {
   background: var(--color-accent);
   color: #063c37;
 }
-
-/* New: hero-specific buttons */
 .btn-white {
-  background: #ffffff;
+  background: #fff;
   color: var(--color-text);
   border-color: rgba(16, 24, 40, 0.12);
 }
@@ -156,8 +220,8 @@ a:hover {
 }
 
 .btn-teal {
-  background: var(--color-accent); /* #14B8A6 */
-  color: #ffffff;
+  background: var(--color-accent);
+  color: #fff;
 }
 .btn-teal:hover {
   filter: brightness(0.95);
@@ -175,21 +239,6 @@ a:hover {
 .center {
   text-align: center;
 }
-.stack-8 > * + * {
-  margin-top: 8px;
-}
-.stack-12 > * + * {
-  margin-top: 12px;
-}
-.stack-16 > * + * {
-  margin-top: 16px;
-}
-.stack-24 > * + * {
-  margin-top: 24px;
-}
-.stack-32 > * + * {
-  margin-top: 32px;
-}
 
 /* ---------------------------
    4) Hero (light gradient + height utilities)
@@ -198,11 +247,10 @@ a:hover {
   min-height: var(--hero-height, 70vh);
   display: grid;
   align-items: center;
-
-  /* Light, airy gradient so dark text & buttons are visible */
   background: linear-gradient(135deg, #f4fbff 0%, #eaf8f6 50%, #e6fffb 100%);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-xl);
   overflow: hidden;
+  padding: clamp(var(--space-24), 3vw, var(--space-40)) 0; /* inner breathing */
 }
 
 /* Height utilities */
@@ -219,35 +267,38 @@ a:hover {
   --hero-height: 100vh;
 }
 
-/* Slightly reduce height on very small screens */
 @media (max-width: 599px) {
   .hero {
     min-height: calc(var(--hero-height, 70vh) - 10vh);
   }
 }
 
-/* Keep overlay padding; color is set in component SCSS */
+/* overlay padding – content column spacing is handled in component SCSS */
 .hero-overlay {
-  padding: clamp(20px, 4vw, 48px);
+  padding-right: clamp(0px, 4vw, var(--space-40));
   border-radius: inherit;
 }
 
-/* ---------------------------
-   5) Alternating Section Backgrounds
----------------------------- */
-main > section:not(#hero):nth-of-type(odd) {
-  background: var(--color-bg);
-}
-main > section:not(#hero):nth-of-type(even) {
-  background: #ffffff;
-  box-shadow: inset 0 1px 0 rgba(16, 24, 40, 0.06),
-    inset 0 -1px 0 rgba(16, 24, 40, 0.06);
-}
-.section + .section {
-  border-top: 1px solid rgba(16, 24, 40, 0.06);
+/* Section labels */
+.section-label {
+  display: inline-block;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  color: var(--color-accent);
+  background: rgba(20, 184, 166, 0.1);
+  border: 1px solid rgba(20, 184, 166, 0.35);
+  padding: 6px 10px;
+  border-radius: 999px;
+  margin-bottom: var(--space-12);
 }
 
-/* Tinted cards on white sections so they don't disappear */
-main > section:not(#hero):nth-of-type(even) .card {
-  background: #fcfcff;
+.section-title {
+  margin-bottom: var(--space-12);
+}
+.section-lead {
+  margin: 0 auto var(--space-24);
+  color: var(--color-muted);
+  max-width: 62ch;
 }

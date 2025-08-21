@@ -1,4 +1,4 @@
-<!-- Top Bar (phone, email, address — all on the left) -->
+<!-- Top Bar -->
 <div class="top-bar" role="contentinfo">
   <div class="container top-bar-inner">
     <div class="top-bar-left">
@@ -9,16 +9,14 @@
   </div>
 </div>
 
-<!-- Topbar / Header -->
+<!-- Header -->
 <header class="site-header" role="banner">
   <div class="container header-inner">
-    <!-- Left: Brand -->
     <a href="/" class="brand" aria-label="Elite Consulting Home">
       <span class="brand-mark">EC</span>
       <span class="brand-text">Elite Consulting</span>
     </a>
 
-    <!-- Center: Main menu (desktop/tablet) -->
     <nav class="main-nav" aria-label="Primary">
       <a
         href="#about"
@@ -27,7 +25,6 @@
         [attr.aria-current]="activeLink === 'about' ? 'page' : null"
         >About</a
       >
-
       <a
         href="#services"
         (click)="setActive('services')"
@@ -35,7 +32,6 @@
         [attr.aria-current]="activeLink === 'services' ? 'page' : null"
         >Services</a
       >
-
       <a
         href="#why"
         (click)="setActive('why')"
@@ -43,7 +39,6 @@
         [attr.aria-current]="activeLink === 'why' ? 'page' : null"
         >Why Us</a
       >
-
       <a
         href="#contact"
         (click)="setActive('contact')"
@@ -51,7 +46,6 @@
         [attr.aria-current]="activeLink === 'contact' ? 'page' : null"
         >Contact</a
       >
-
       <a
         href="#testimonials"
         (click)="setActive('testimonials')"
@@ -59,7 +53,6 @@
         [attr.aria-current]="activeLink === 'testimonials' ? 'page' : null"
         >Testimonials</a
       >
-
       <a
         href="#footer"
         (click)="setActive('more')"
@@ -69,10 +62,8 @@
       >
     </nav>
 
-    <!-- Right: CTA (hidden on mobile; shows on ≥900px) -->
     <a class="btn btn-accent header-cta" href="#contact">Get a Proposal</a>
 
-    <!-- Mobile menu toggle (placeholder) -->
     <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -80,29 +71,26 @@
 </header>
 
 <main role="main">
-  <!-- Hero Section (light gradient; height controlled by hero--XX class) -->
+  <!-- Hero -->
   <section id="hero" class="section" aria-labelledby="hero-title">
     <div class="container">
-      <!-- pick one: hero--60 / hero--70 / hero--80 / hero--100 -->
       <div class="hero hero--70 grid grid-2">
-        <!-- Left: text -->
-        <div class="hero-overlay">
+        <div class="hero-overlay flow-lg">
           <p class="eyebrow">Strategy • Growth • Digital</p>
-          <h1 id="hero-title">
+          <h1 id="hero-title" class="max-w-measure">
             Consulting That <em>Actually</em> Moves the Needle
           </h1>
-          <p>
+          <p class="max-w-measure">
             We help SMEs and startups achieve measurable growth through
             <strong>strategy</strong>, <strong>branding</strong>, and
             <strong>digital transformation</strong>—without the fluff.
           </p>
-          <div class="stack-16">
+          <div class="flow-sm">
             <a href="#services" class="btn btn-white">Explore Services</a>
             <a href="#contact" class="btn btn-teal">Book a Free Call</a>
           </div>
         </div>
 
-        <!-- Right: image (smaller, no shadow) -->
         <figure class="hero-figure" aria-label="Consultant at work">
           <img
             src="assets/hero-foreground.png"
@@ -113,26 +101,26 @@
     </div>
   </section>
 
-  <!-- About Section -->
+  <!-- About -->
   <section id="about" class="section" aria-labelledby="about-title">
     <div class="container grid grid-2">
-      <div class="stack-16">
+      <div class="flow-lg">
         <span class="section-label">About</span>
         <h2 id="about-title" class="section-title">About Us</h2>
-        <p>
+        <p class="max-w-measure">
           Elite Consulting partners with entrepreneurs and leadership teams to
           clarify strategy, sharpen positioning, and operationalize digital
           initiatives. Our boutique model means
           <strong>senior attention</strong> on every engagement.
         </p>
-        <p class="text-muted">
+        <p class="text-muted max-w-measure">
           From discovery to delivery, we focus on ROI: validated roadmaps, lean
           execution, and transparent KPIs.
         </p>
 
-        <div class="card">
+        <div class="card flow-sm">
           <h3>What Makes Us Different</h3>
-          <ul>
+          <ul class="flow-xs">
             <li>Hands-on senior consultants — no bait-and-switch</li>
             <li>Strategy-to-execution bridge — not just slides</li>
             <li>Measurable outcomes — revenue, CAC/LTV, retention</li>
@@ -150,50 +138,52 @@
     </div>
   </section>
 
-  <!-- Services Section -->
+  <!-- Services -->
   <section id="services" class="section" aria-labelledby="services-title">
-    <div class="container">
-      <span class="section-label center">Services</span>
-      <h2 id="services-title" class="center section-title">Services</h2>
-      <p class="center section-lead">Tailored consulting to unlock growth.</p>
+    <div class="container flow-md">
+      <div class="center flow-sm">
+        <span class="section-label">Services</span>
+        <h2 id="services-title" class="section-title">Services</h2>
+        <p class="section-lead">Tailored consulting to unlock growth.</p>
+      </div>
 
       <div class="services-grid">
-        <article class="card">
+        <article class="card flow-xs">
           <h3>Growth Strategy</h3>
           <p>
             Market sizing, ICP definition, value prop, pricing, and GTM plans
             grounded in data.
           </p>
         </article>
-        <article class="card">
+        <article class="card flow-xs">
           <h3>Brand & Positioning</h3>
           <p>
             Messaging frameworks, visual direction, and content strategy that
             resonate with high-value customers.
           </p>
         </article>
-        <article class="card">
+        <article class="card flow-xs">
           <h3>Digital Transformation</h3>
           <p>
             Process mapping, automation, analytics, and platform selection for
             scalable operations.
           </p>
         </article>
-        <article class="card">
+        <article class="card flow-xs">
           <h3>Performance Marketing</h3>
           <p>
             Full-funnel acquisition and retention: SEO, paid media, lifecycle
             email/SMS, and CRO.
           </p>
         </article>
-        <article class="card">
+        <article class="card flow-xs">
           <h3>RevOps & Enablement</h3>
           <p>
             CRM architecture, pipeline hygiene, playbooks, and dashboards for
             predictable growth.
           </p>
         </article>
-        <article class="card">
+        <article class="card flow-xs">
           <h3>Advisory & Fractional</h3>
           <p>
             On-call advisory or fractional leadership to guide your team as you
@@ -207,14 +197,14 @@
   <!-- Why Choose Us -->
   <section id="why" class="section" aria-labelledby="why-title">
     <div class="container grid grid-2">
-      <div class="stack-16">
+      <div class="flow-lg">
         <span class="section-label">Why Us</span>
         <h2 id="why-title" class="section-title">Why Choose Us</h2>
-        <p>
+        <p class="max-w-measure">
           We combine <strong>strategy, brand, and ops</strong> under one roof so
           your plan doesn’t stall between slides and systems.
         </p>
-        <ul>
+        <ul class="flow-xs max-w-measure">
           <li>
             <strong>Outcome-first:</strong> we define success metrics up front.
           </li>
@@ -241,7 +231,7 @@
   <!-- Contact -->
   <section id="contact" class="section" aria-labelledby="contact-title">
     <div class="container grid grid-2">
-      <div class="stack-16">
+      <div class="flow-lg">
         <span class="section-label">Contact</span>
         <h2 id="contact-title" class="section-title">Let’s Talk</h2>
         <p class="section-lead">
@@ -251,7 +241,7 @@
         <a href="#contact" class="btn btn-teal">Book a Free Consultation</a>
       </div>
 
-      <form class="card contact-form" aria-label="Contact form">
+      <form class="card contact-form flow-sm" aria-label="Contact form">
         <div class="grid">
           <label
             ><span>Name</span
@@ -301,12 +291,14 @@
     class="section"
     aria-labelledby="testimonials-title"
   >
-    <div class="container">
-      <span class="section-label center">Testimonials</span>
-      <h2 id="testimonials-title" class="center section-title">
-        Client Testimonials
-      </h2>
-      <p class="center section-lead">Social proof that speaks to outcomes.</p>
+    <div class="container flow-md">
+      <div class="center flow-sm">
+        <span class="section-label">Testimonials</span>
+        <h2 id="testimonials-title" class="section-title">
+          Client Testimonials
+        </h2>
+        <p class="section-lead">Social proof that speaks to outcomes.</p>
+      </div>
 
       <div class="testimonials-grid">
         <blockquote class="card">
@@ -331,21 +323,19 @@
 <!-- Footer -->
 <footer id="footer" class="site-footer" role="contentinfo">
   <div class="container footer-grid">
-    <!-- Col 1: logo + text -->
-    <div class="footer-col">
+    <div class="footer-col flow-sm">
       <a href="/" class="brand footer-brand" aria-label="Elite Consulting Home">
-        <span class="brand-mark">EC</span>
-        <span class="brand-text">Elite Consulting</span>
+        <span class="brand-mark">EC</span
+        ><span class="brand-text">Elite Consulting</span>
       </a>
-      <p class="text-muted">
+      <p class="text-muted max-w-measure">
         Strategy, brand, and digital—joined up for measurable growth.
       </p>
     </div>
 
-    <!-- Col 2: quick links -->
     <nav class="footer-col" aria-label="Quick links">
       <h3>Quick Links</h3>
-      <ul>
+      <ul class="flow-xs">
         <li><a href="#services">Services</a></li>
         <li><a href="#why">Why Us</a></li>
         <li><a href="#testimonials">Testimonials</a></li>
@@ -353,33 +343,30 @@
       </ul>
     </nav>
 
-    <!-- Col 3: tags + socials (ICONS HERE) -->
     <div class="footer-col">
       <h3>Tags & Social</h3>
       <p class="tags">
         growth • strategy • branding • revops • marketing • digital
       </p>
-
       <div class="footer-socials" aria-label="Social media">
-        <a href="#" aria-label="Facebook" class="social-btn">
-          <i class="fab fa-facebook-f" aria-hidden="true"></i>
-        </a>
-        <a href="#" aria-label="Instagram" class="social-btn">
-          <i class="fab fa-instagram" aria-hidden="true"></i>
-        </a>
-        <a href="#" aria-label="YouTube" class="social-btn">
-          <i class="fab fa-youtube" aria-hidden="true"></i>
-        </a>
-        <a href="#" aria-label="LinkedIn" class="social-btn">
-          <i class="fab fa-linkedin-in" aria-hidden="true"></i>
-        </a>
-        <a href="#" aria-label="Twitter/X" class="social-btn">
-          <i class="fab fa-x-twitter" aria-hidden="true"></i>
-        </a>
+        <a href="#" aria-label="Facebook" class="social-btn"
+          ><i class="fab fa-facebook-f" aria-hidden="true"></i
+        ></a>
+        <a href="#" aria-label="Instagram" class="social-btn"
+          ><i class="fab fa-instagram" aria-hidden="true"></i
+        ></a>
+        <a href="#" aria-label="YouTube" class="social-btn"
+          ><i class="fab fa-youtube" aria-hidden="true"></i
+        ></a>
+        <a href="#" aria-label="LinkedIn" class="social-btn"
+          ><i class="fab fa-linkedin-in" aria-hidden="true"></i
+        ></a>
+        <a href="#" aria-label="Twitter/X" class="social-btn"
+          ><i class="fab fa-x-twitter" aria-hidden="true"></i
+        ></a>
       </div>
     </div>
 
-    <!-- Col 4: contact -->
     <address class="footer-col">
       <h3>Contact</h3>
       <p>📧 hello&#64;eliteconsulting.co</p>
