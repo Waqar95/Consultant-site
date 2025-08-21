@@ -22,42 +22,36 @@
         href="#about"
         (click)="setActive('about')"
         [class.active]="activeLink === 'about'"
-        [attr.aria-current]="activeLink === 'about' ? 'page' : null"
         >About</a
       >
       <a
         href="#services"
         (click)="setActive('services')"
         [class.active]="activeLink === 'services'"
-        [attr.aria-current]="activeLink === 'services' ? 'page' : null"
         >Services</a
       >
       <a
         href="#why"
         (click)="setActive('why')"
         [class.active]="activeLink === 'why'"
-        [attr.aria-current]="activeLink === 'why' ? 'page' : null"
         >Why Us</a
       >
       <a
         href="#contact"
         (click)="setActive('contact')"
         [class.active]="activeLink === 'contact'"
-        [attr.aria-current]="activeLink === 'contact' ? 'page' : null"
         >Contact</a
       >
       <a
         href="#testimonials"
         (click)="setActive('testimonials')"
         [class.active]="activeLink === 'testimonials'"
-        [attr.aria-current]="activeLink === 'testimonials' ? 'page' : null"
         >Testimonials</a
       >
       <a
         href="#footer"
         (click)="setActive('more')"
         [class.active]="activeLink === 'more'"
-        [attr.aria-current]="activeLink === 'more' ? 'page' : null"
         >More</a
       >
     </nav>
@@ -72,12 +66,12 @@
 
 <main role="main">
   <!-- Hero -->
-  <section id="hero" class="section" aria-labelledby="hero-title">
+  <section id="hero" class="section">
     <div class="container">
       <div class="hero hero--70 grid grid-2">
-        <div class="hero-overlay flow-lg">
+        <div class="hero-overlay">
           <p class="eyebrow">Strategy • Growth • Digital</p>
-          <h1 id="hero-title" class="max-w-measure">
+          <h1 class="max-w-measure">
             Consulting That <em>Actually</em> Moves the Needle
           </h1>
           <p class="max-w-measure">
@@ -85,7 +79,7 @@
             <strong>strategy</strong>, <strong>branding</strong>, and
             <strong>digital transformation</strong>—without the fluff.
           </p>
-          <div class="flow-sm">
+          <div class="btn-row">
             <a href="#services" class="btn btn-white">Explore Services</a>
             <a href="#contact" class="btn btn-teal">Book a Free Call</a>
           </div>
@@ -102,11 +96,11 @@
   </section>
 
   <!-- About -->
-  <section id="about" class="section" aria-labelledby="about-title">
+  <section id="about" class="section">
     <div class="container grid grid-2">
-      <div class="flow-lg">
+      <div>
         <span class="section-label">About</span>
-        <h2 id="about-title" class="section-title">About Us</h2>
+        <h2 class="section-title">About Us</h2>
         <p class="max-w-measure">
           Elite Consulting partners with entrepreneurs and leadership teams to
           clarify strategy, sharpen positioning, and operationalize digital
@@ -118,9 +112,9 @@
           execution, and transparent KPIs.
         </p>
 
-        <div class="card flow-sm">
+        <div class="card">
           <h3>What Makes Us Different</h3>
-          <ul class="flow-xs">
+          <ul class="tight-list">
             <li>Hands-on senior consultants — no bait-and-switch</li>
             <li>Strategy-to-execution bridge — not just slides</li>
             <li>Measurable outcomes — revenue, CAC/LTV, retention</li>
@@ -128,7 +122,7 @@
         </div>
       </div>
 
-      <figure class="card">
+      <figure class="card media-card">
         <img
           src="assets/about.jpg"
           alt="Collaborative workshop with a leadership team"
@@ -139,51 +133,51 @@
   </section>
 
   <!-- Services -->
-  <section id="services" class="section" aria-labelledby="services-title">
-    <div class="container flow-md">
-      <div class="center flow-sm">
+  <section id="services" class="section">
+    <div class="container">
+      <div class="center">
         <span class="section-label">Services</span>
-        <h2 id="services-title" class="section-title">Services</h2>
+        <h2 class="section-title">Services</h2>
         <p class="section-lead">Tailored consulting to unlock growth.</p>
       </div>
 
       <div class="services-grid">
-        <article class="card flow-xs">
+        <article class="card">
           <h3>Growth Strategy</h3>
           <p>
             Market sizing, ICP definition, value prop, pricing, and GTM plans
             grounded in data.
           </p>
         </article>
-        <article class="card flow-xs">
+        <article class="card">
           <h3>Brand & Positioning</h3>
           <p>
             Messaging frameworks, visual direction, and content strategy that
             resonate with high-value customers.
           </p>
         </article>
-        <article class="card flow-xs">
+        <article class="card">
           <h3>Digital Transformation</h3>
           <p>
             Process mapping, automation, analytics, and platform selection for
             scalable operations.
           </p>
         </article>
-        <article class="card flow-xs">
+        <article class="card">
           <h3>Performance Marketing</h3>
           <p>
             Full-funnel acquisition and retention: SEO, paid media, lifecycle
             email/SMS, and CRO.
           </p>
         </article>
-        <article class="card flow-xs">
+        <article class="card">
           <h3>RevOps & Enablement</h3>
           <p>
             CRM architecture, pipeline hygiene, playbooks, and dashboards for
             predictable growth.
           </p>
         </article>
-        <article class="card flow-xs">
+        <article class="card">
           <h3>Advisory & Fractional</h3>
           <p>
             On-call advisory or fractional leadership to guide your team as you
@@ -195,22 +189,21 @@
   </section>
 
   <!-- Why Choose Us -->
-  <section id="why" class="section" aria-labelledby="why-title">
+  <section id="why" class="section">
     <div class="container grid grid-2">
-      <div class="flow-lg">
+      <div>
         <span class="section-label">Why Us</span>
-        <h2 id="why-title" class="section-title">Why Choose Us</h2>
+        <h2 class="section-title">Why Choose Us</h2>
         <p class="max-w-measure">
           We combine <strong>strategy, brand, and ops</strong> under one roof so
           your plan doesn’t stall between slides and systems.
         </p>
-        <ul class="flow-xs max-w-measure">
+        <ul class="tight-list max-w-measure">
           <li>
-            <strong>Outcome-first:</strong> we define success metrics up front.
+            <strong>Outcome-first:</strong> success metrics defined up front.
           </li>
           <li>
-            <strong>Lean & transparent:</strong> work in short, validated
-            sprints.
+            <strong>Lean & transparent:</strong> short, validated sprints.
           </li>
           <li>
             <strong>Enablement:</strong> we upskill your team to own the wins.
@@ -219,7 +212,7 @@
         <a href="#contact" class="btn btn-primary">Start Your Project</a>
       </div>
 
-      <figure class="card">
+      <figure class="card media-card">
         <img
           src="assets/why.jpg"
           alt="KPI dashboard illustrating measurable business outcomes"
@@ -228,21 +221,40 @@
     </div>
   </section>
 
-  <!-- Contact -->
-  <section id="contact" class="section" aria-labelledby="contact-title">
-    <div class="container grid grid-2">
-      <div class="flow-lg">
-        <span class="section-label">Contact</span>
-        <h2 id="contact-title" class="section-title">Let’s Talk</h2>
+  <!-- Contact (Let's Talk) 50/50 split -->
+  <section id="contact" class="section">
+    <div class="container grid grid-2 contact-grid">
+      <!-- Content -->
+      <div>
+        <span class="section-label">Let’s Talk</span>
+        <h2 class="section-title">We’d Love to Hear From You</h2>
         <p class="section-lead">
-          Tell us about your goals. We’ll assess fit in a 20-minute discovery
-          call and share a clear next step.
+          Whether you’re exploring strategy, brand, or digital transformation —
+          we’ll respond within 24 hours with next steps and a clear path
+          forward.
         </p>
-        <a href="#contact" class="btn btn-teal">Book a Free Consultation</a>
+
+        <div class="benefits">
+          <div class="benefit">
+            <div class="dot"></div>
+            <p>No hard sell — just helpful guidance</p>
+          </div>
+          <div class="benefit">
+            <div class="dot"></div>
+            <p>Senior consultants on every call</p>
+          </div>
+          <div class="benefit">
+            <div class="dot"></div>
+            <p>Actionable recommendations within a week</p>
+          </div>
+        </div>
+
+        <a href="#services" class="btn btn-white">See What We Do</a>
       </div>
 
-      <form class="card contact-form flow-sm" aria-label="Contact form">
-        <div class="grid">
+      <!-- Form -->
+      <form class="card contact-form" aria-label="Contact form">
+        <div class="grid two">
           <label
             ><span>Name</span
             ><input
@@ -276,27 +288,30 @@
           ><textarea
             name="message"
             rows="5"
-            placeholder="Briefly describe your goals and timeline…"
+            placeholder="Tell us how we can help…"
             required
           ></textarea>
         </label>
-        <button type="submit" class="btn btn-white">Send Message</button>
+        <button type="submit" class="btn btn-teal">Send Message</button>
+
+        <div class="contact-extra">
+          <p>
+            <strong>📍 Office:</strong> 123 Market Street, Suite 500, San
+            Francisco, CA
+          </p>
+          <p><strong>📞 Phone:</strong> +1 (555) 012-3456</p>
+          <p><strong>✉ Email:</strong> hello&#64;eliteconsulting.co</p>
+        </div>
       </form>
     </div>
   </section>
 
   <!-- Testimonials -->
-  <section
-    id="testimonials"
-    class="section"
-    aria-labelledby="testimonials-title"
-  >
-    <div class="container flow-md">
-      <div class="center flow-sm">
+  <section id="testimonials" class="section">
+    <div class="container">
+      <div class="center">
         <span class="section-label">Testimonials</span>
-        <h2 id="testimonials-title" class="section-title">
-          Client Testimonials
-        </h2>
+        <h2 class="section-title">Client Testimonials</h2>
         <p class="section-lead">Social proof that speaks to outcomes.</p>
       </div>
 
@@ -323,19 +338,23 @@
 <!-- Footer -->
 <footer id="footer" class="site-footer" role="contentinfo">
   <div class="container footer-grid">
-    <div class="footer-col flow-sm">
-      <a href="/" class="brand footer-brand" aria-label="Elite Consulting Home">
-        <span class="brand-mark">EC</span
-        ><span class="brand-text">Elite Consulting</span>
+    <!-- Col 1: logo + about -->
+    <div class="footer-col footer-brand">
+      <a href="/" class="brand" aria-label="Elite Consulting Home">
+        <span class="brand-mark">EC</span>
+        <span class="brand-text">Elite Consulting</span>
       </a>
-      <p class="text-muted max-w-measure">
-        Strategy, brand, and digital—joined up for measurable growth.
+      <p class="text-muted">
+        At Elite Consulting, we combine strategy, brand, and digital to help
+        ambitious teams grow with clarity and speed. Senior attention on every
+        engagement — no fluff, just outcomes.
       </p>
     </div>
 
+    <!-- Col 2: quick links -->
     <nav class="footer-col" aria-label="Quick links">
       <h3>Quick Links</h3>
-      <ul class="flow-xs">
+      <ul class="footer-links">
         <li><a href="#services">Services</a></li>
         <li><a href="#why">Why Us</a></li>
         <li><a href="#testimonials">Testimonials</a></li>
@@ -343,6 +362,7 @@
       </ul>
     </nav>
 
+    <!-- Col 3: tags + socials -->
     <div class="footer-col">
       <h3>Tags & Social</h3>
       <p class="tags">
@@ -367,11 +387,15 @@
       </div>
     </div>
 
-    <address class="footer-col">
+    <!-- Col 4: contact (phone, email, address) -->
+    <address class="footer-col footer-contact">
       <h3>Contact</h3>
-      <p>📧 hello&#64;eliteconsulting.co</p>
-      <p>📞 +1 (555) 012-3456</p>
-      <p>📍 123 Market Street, Suite 500, San Francisco, CA</p>
+      <p><i class="fas fa-phone"></i> +1 (555) 012-3456</p>
+      <p><i class="fas fa-envelope"></i> hello&#64;eliteconsulting.co</p>
+      <p>
+        <i class="fas fa-location-dot"></i> 123 Market Street, Suite 500, San
+        Francisco, CA
+      </p>
     </address>
   </div>
 
