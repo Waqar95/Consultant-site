@@ -31,7 +31,7 @@
 
 .header-inner {
   display: grid;
-  grid-template-columns: auto 1fr auto auto;
+  grid-template-columns: auto 1fr auto; /* brand | nav (center) | cta/toggle (right) */
   align-items: center;
   gap: 16px;
   height: 64px;
@@ -61,20 +61,62 @@
   letter-spacing: 0.2px;
 }
 
+/* ---- CENTERED MAIN MENU with hover/active animations ---- */
 .main-nav {
-  display: none;
+  justify-self: center; /* center in header grid */
+  display: none; /* hidden on mobile; shown ≥900px */
+  align-items: center;
+  gap: 6px;
 }
 .main-nav a {
-  margin: 0 10px;
+  position: relative;
+  display: inline-block;
+  padding: 8px 12px;
   color: var(--color-text);
-}
-.main-nav a:hover {
-  color: var(--color-primary);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 180ms ease;
 }
 
+/* Top bar hover animation (slides in from center) */
+.main-nav a::before {
+  content: "";
+  position: absolute;
+  top: 0; /* bar on TOP of item */
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  transform-origin: center;
+  height: 3px;
+  width: 70%;
+  border-radius: 2px;
+  background: var(--color-accent);
+  transition: transform 220ms ease;
+}
+
+/* On hover/focus: animate the top bar in; change text color slightly */
+.main-nav a:hover,
+.main-nav a:focus {
+  color: #0b1b3b;
+}
+.main-nav a:hover::before,
+.main-nav a:focus::before {
+  transform: translateX(-50%) scaleX(1);
+}
+
+/* Active state: persistent accent color + bar shown */
+.main-nav a.active {
+  color: var(--color-accent);
+}
+.main-nav a.active::before {
+  transform: translateX(-50%) scaleX(1);
+}
+
+/* keep header CTA at the right end */
 .header-cta {
+  justify-self: end;
   display: none;
 }
+
 .menu-toggle {
   display: inline-grid;
   width: 36px;
@@ -94,7 +136,7 @@
 
 @media (min-width: 900px) {
   .main-nav {
-    display: block;
+    display: inline-flex;
   }
   .header-cta {
     display: inline-block;

@@ -18,20 +18,61 @@
       <span class="brand-text">Elite Consulting</span>
     </a>
 
-    <!-- Center/Right: Main menu (desktop/tablet) -->
+    <!-- Center: Main menu (desktop/tablet) -->
     <nav class="main-nav" aria-label="Primary">
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#why">Why Us</a>
-      <a href="#contact">Contact</a>
-      <a href="#testimonials">Testimonials</a>
-      <a href="#footer">More</a>
+      <a
+        href="#about"
+        (click)="setActive('about')"
+        [class.active]="activeLink === 'about'"
+        [attr.aria-current]="activeLink === 'about' ? 'page' : null"
+        >About</a
+      >
+
+      <a
+        href="#services"
+        (click)="setActive('services')"
+        [class.active]="activeLink === 'services'"
+        [attr.aria-current]="activeLink === 'services' ? 'page' : null"
+        >Services</a
+      >
+
+      <a
+        href="#why"
+        (click)="setActive('why')"
+        [class.active]="activeLink === 'why'"
+        [attr.aria-current]="activeLink === 'why' ? 'page' : null"
+        >Why Us</a
+      >
+
+      <a
+        href="#contact"
+        (click)="setActive('contact')"
+        [class.active]="activeLink === 'contact'"
+        [attr.aria-current]="activeLink === 'contact' ? 'page' : null"
+        >Contact</a
+      >
+
+      <a
+        href="#testimonials"
+        (click)="setActive('testimonials')"
+        [class.active]="activeLink === 'testimonials'"
+        [attr.aria-current]="activeLink === 'testimonials' ? 'page' : null"
+        >Testimonials</a
+      >
+
+      <a
+        href="#footer"
+        (click)="setActive('more')"
+        [class.active]="activeLink === 'more'"
+        [attr.aria-current]="activeLink === 'more' ? 'page' : null"
+        >More</a
+      >
     </nav>
 
-    <!-- CTA (desktop/tablet). On mobile we’ll show in bottom nav. -->
+    <!-- Right: CTA (hidden on mobile; shows on ≥900px) -->
     <a class="btn btn-accent header-cta" href="#contact">Get a Proposal</a>
 
-    <!-- Mobile menu toggle (placeholder for now) -->
+    <!-- Mobile menu toggle (placeholder) -->
     <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -56,7 +97,6 @@
             <strong>digital transformation</strong>—without the fluff.
           </p>
           <div class="stack-16">
-            <!-- First button: white; Second button: teal (#14B8A6) -->
             <a href="#services" class="btn btn-white">Explore Services</a>
             <a href="#contact" class="btn btn-teal">Book a Free Call</a>
           </div>
@@ -334,7 +374,7 @@
     <div class="container">
       <small
         >© {{ year }} Elite Consulting — Design & Developed by
-        <strong>company</strong></small
+        <strong>WaqroSoft</strong></small
       >
     </div>
   </div>

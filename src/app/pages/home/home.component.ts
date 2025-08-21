@@ -7,6 +7,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
-  // This property must exist for {{ year }} in the HTML
   year: number = new Date().getFullYear();
+
+  // simple click-based active state; we can enhance to scrollspy later
+  activeLink:
+    | 'about'
+    | 'services'
+    | 'why'
+    | 'contact'
+    | 'testimonials'
+    | 'more' = 'about';
+
+  setActive(link: typeof this.activeLink) {
+    this.activeLink = link;
+  }
 }
