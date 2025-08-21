@@ -1,11 +1,24 @@
+<!-- Top Bar (phone, email, address — all on the left) -->
+<div class="top-bar" role="contentinfo">
+  <div class="container top-bar-inner">
+    <div class="top-bar-left">
+      <span class="contact-item">📞 +1 (555) 123-4567</span>
+      <span class="contact-item">✉️ info&#64;eliteconsulting.com</span>
+      <span class="contact-item">📍 123 Main Street, New York, USA</span>
+    </div>
+  </div>
+</div>
+
 <!-- Topbar / Header -->
 <header class="site-header" role="banner">
   <div class="container header-inner">
+    <!-- Left: Brand -->
     <a href="/" class="brand" aria-label="Elite Consulting Home">
       <span class="brand-mark">EC</span>
       <span class="brand-text">Elite Consulting</span>
     </a>
 
+    <!-- Center/Right: Main menu (desktop/tablet) -->
     <nav class="main-nav" aria-label="Primary">
       <a href="#about">About</a>
       <a href="#services">Services</a>
@@ -15,8 +28,10 @@
       <a href="#footer">More</a>
     </nav>
 
+    <!-- CTA (desktop/tablet). On mobile we’ll show in bottom nav. -->
     <a class="btn btn-accent header-cta" href="#contact">Get a Proposal</a>
 
+    <!-- Mobile menu toggle (placeholder for now) -->
     <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -319,7 +334,7 @@
     <div class="container">
       <small
         >© {{ year }} Elite Consulting — Design & Developed by
-        <strong>WaqroSoft</strong></small
+        <strong>company</strong></small
       >
     </div>
   </div>

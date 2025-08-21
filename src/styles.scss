@@ -139,13 +139,13 @@ a:hover {
   box-shadow: var(--shadow-md);
 }
 
-/* Existing accent button remains (dark text). You can still use it elsewhere */
+/* Accent button (existing) */
 .btn-accent {
   background: var(--color-accent);
   color: #063c37;
 }
 
-/* New: buttons for the hero per your request */
+/* New: hero-specific buttons */
 .btn-white {
   background: #ffffff;
   color: var(--color-text);

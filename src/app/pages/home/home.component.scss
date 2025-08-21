@@ -1,9 +1,30 @@
+/* ---------- Top Bar ---------- */
+.top-bar {
+  background: #0f172a; /* deep navy */
+  color: #ffffff;
+  font-size: 13px;
+  line-height: 1;
+}
+.top-bar-inner {
+  display: flex;
+  align-items: center;
+  min-height: 36px;
+}
+.top-bar-left {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 20px;
+}
+.contact-item {
+  opacity: 0.95;
+}
+
 /* ---------- Header ---------- */
 .site-header {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: #ffffffcc;
+  background: #ffffffcc; /* translucent white */
   backdrop-filter: saturate(180%) blur(8px);
   border-bottom: 1px solid rgba(16, 24, 40, 0.06);
 }
@@ -95,7 +116,7 @@
 .hero .hero-overlay {
   background: transparent; /* no extra gradient */
   color: var(--color-text); /* dark text on light gradient */
-  text-shadow: none; /* not needed on light bg */
+  text-shadow: none;
   padding: clamp(20px, 4vw, 48px);
   border-radius: var(--radius-lg);
 }
