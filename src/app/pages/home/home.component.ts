@@ -9,7 +9,7 @@ import { Component } from '@angular/core';
 export class HomeComponent {
   year: number = new Date().getFullYear();
 
-  // simple click-based active state; we can enhance to scrollspy later
+  // simple click-based active state; can upgrade to scrollspy later
   activeLink:
     | 'about'
     | 'services'

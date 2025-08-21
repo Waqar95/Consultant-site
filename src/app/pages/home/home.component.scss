@@ -78,11 +78,11 @@
   transition: color 180ms ease;
 }
 
-/* Top bar hover animation (slides in from center) */
+/* Top bar hover animation (slides in from top center) */
 .main-nav a::before {
   content: "";
   position: absolute;
-  top: 0; /* bar on TOP of item */
+  top: 0;
   left: 50%;
   transform: translateX(-50%) scaleX(0);
   transform-origin: center;
@@ -183,6 +183,14 @@
   }
 }
 
+/* ---------- About image helper ---------- */
+.about-img {
+  max-width: 360px;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
 /* ---------- Services grid ---------- */
 .services-grid {
   display: grid;
@@ -262,14 +270,45 @@
 .tags {
   opacity: 0.9;
 }
+
+/* Social icons row */
+.footer-socials {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 10px;
+}
+.footer-socials .social-btn {
+  display: inline-grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  transition: transform 150ms ease, background 150ms ease, color 150ms ease;
+  text-decoration: none;
+}
+.footer-socials .social-btn:hover {
+  transform: translateY(-2px);
+  background: #14b8a6;
+  color: #0b1b3b;
+}
+.footer-socials i {
+  font-size: 14px;
+  line-height: 1;
+}
+
 .socials a {
   margin-right: 8px;
-}
+} /* (legacy; safe to remove if unused) */
+
 @media (min-width: 900px) {
   .footer-grid {
     grid-template-columns: 1.2fr 1fr 1fr 1fr;
   }
 }
+
 .footer-bottom {
   border-top: 1px solid rgba(255, 255, 255, 0.15);
   margin-top: 24px;
@@ -328,9 +367,4 @@
   margin-bottom: 16px;
   color: var(--color-muted);
   max-width: 62ch;
-}
-.about-img {
-  width: 500px; /* adjust as needed */
-  height: 430px;
-  border-radius: 12px;
 }
