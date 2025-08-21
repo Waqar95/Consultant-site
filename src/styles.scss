@@ -302,7 +302,6 @@ main > section:not(#hero):nth-of-type(even) {
   color: var(--color-muted);
   max-width: 62ch;
 }
-
 /* Base button */
 .btn {
   display: inline-block;
@@ -312,6 +311,7 @@ main > section:not(#hero):nth-of-type(even) {
   text-decoration: none;
   text-align: center;
   transition: all 0.3s ease; /* smooth animations */
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0); /* no shadow initially */
 }
 
 /* Button variants */
@@ -339,9 +339,10 @@ main > section:not(#hero):nth-of-type(even) {
   border: 2px solid #f97316;
 }
 
-/* Hover states — grow + color shift */
+/* Hover states — grow + color shift + shadow */
 .btn:hover {
   transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* subtle elevation */
 }
 
 /* White button hover */
