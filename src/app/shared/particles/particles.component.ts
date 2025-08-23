@@ -1,29 +1,18 @@
 import { Component } from '@angular/core';
-import { NgParticlesModule } from 'ng-particles';
-import { loadFull } from 'tsparticles';
+import { NgxParticlesComponent } from '@tsparticles/angular';
 
 @Component({
   selector: 'app-particles',
   standalone: true,
-  imports: [NgParticlesModule],
+  imports: [NgxParticlesComponent],
   template: `
-    <ng-particles
-      [id]="id"
-      [options]="particlesOptions"
-      (particlesInit)="particlesInit($event)"
-      (particlesLoaded)="onParticlesLoaded($event)"
-    >
-    </ng-particles>
+    <ng-particles id="tsparticles" [options]="particlesOptions"></ng-particles>
   `,
-  styleUrls: ['./particles.component.scss'],
 })
 export class ParticlesComponent {
-  id = 'tsparticles';
-
   particlesOptions = {
-    background: {
-      color: { value: '#ffffff' }, // background color
-    },
+    fullScreen: { enable: true, zIndex: 0 },
+    background: { color: { value: 'transparent' } },
     fpsLimit: 60,
     interactivity: {
       events: {
@@ -42,29 +31,23 @@ export class ParticlesComponent {
         color: '#14b8a6',
         distance: 150,
         enable: true,
-        opacity: 0.5,
+        opacity: 0.35,
         width: 1,
       },
-      collisions: { enable: true },
       move: {
-        direction: 'none',
+        direction: 'none' as const, // ✅ FIXED typing issue
         enable: true,
         outModes: { default: 'out' },
-        speed: 2,
+        speed: 1.6,
       },
-      number: { density: { enable: true, area: 800 }, value: 80 },
-      opacity: { value: 0.5 },
+      number: {
+        density: { enable: true, area: 900 },
+        value: 60,
+      },
+      opacity: { value: 0.45 },
       shape: { type: 'circle' },
-      size: { value: { min: 1, max: 5 } },
+      size: { value: { min: 1, max: 4 } },
     },
     detectRetina: true,
   };
-
-  async particlesInit(engine: any): Promise<void> {
-    await loadFull(engine); // loads tsparticles bundle
-  }
-
-  onParticlesLoaded(container: any): void {
-    console.log('Particles loaded', container);
-  }
 }

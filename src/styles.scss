@@ -1,6 +1,12 @@
 /* ---------------------------
    1) CSS Variables (Theme)
 ---------------------------- */
+.site-header,
+main,
+footer {
+  position: relative;
+  z-index: 1;
+}
 :root {
   /* Colors */
   --color-primary: #0b1b3b;

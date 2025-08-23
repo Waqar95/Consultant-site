@@ -6,3 +6,7 @@
   height: 100%;
   z-index: -1; /* stay behind content */
 }
+/* Keep it non-interactive and let tsparticles manage full-screen */
+:host {
+  pointer-events: none; /* clicks go to your site, not the canvas */
+}
