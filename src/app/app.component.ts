@@ -2,7 +2,9 @@ import { Component, OnInit, inject } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { RouterOutlet } from '@angular/router';
 
+/** Angular wrapper (NgModule) for tsparticles */
 import { NgxParticlesModule } from '@tsparticles/angular';
+/** Loads the full engine so all options work */
 import { loadFull } from 'tsparticles';
 
 @Component({
@@ -14,11 +16,7 @@ import { loadFull } from 'tsparticles';
     <ngx-particles
       id="tsparticles"
       [options]="particlesOptions"
-      (particlesInit)="particlesInit($event)"
-    >
-    </ngx-particles>
-
-    <!-- Render pages through the router ONLY -->
+    ></ngx-particles>
     <router-outlet></router-outlet>
   `,
 })
@@ -26,9 +24,9 @@ export class AppComponent implements OnInit {
   private title = inject(Title);
   private meta = inject(Meta);
 
-  // keep options typed as any to avoid strict union typing issues
+  // Keep it 'any' to avoid union typing friction with Angular strict modes
   particlesOptions: any = {
-    fullScreen: { enable: true, zIndex: 0 },
+    fullScreen: { enable: true, zIndex: 0 }, // behind your content
     background: { color: { value: 'transparent' } },
     fpsLimit: 60,
     interactivity: {
@@ -52,9 +50,9 @@ export class AppComponent implements OnInit {
         width: 1,
       },
       move: {
-        direction: 'none' as const, // literal cast for Angular’s type checker
+        direction: 'none' as const, // literal cast avoids NG2 typing error
         enable: true,
-        outModes: { default: 'out' as const }, // literal cast
+        outModes: { default: 'out' as const },
         speed: 1.6,
       },
       number: { density: { enable: true, area: 900 }, value: 60 },
@@ -66,7 +64,8 @@ export class AppComponent implements OnInit {
   };
 
   async particlesInit(engine: any) {
-    await loadFull(engine); // load tsparticles engine/features
+    // REQUIRED for @tsparticles/angular: initializes the engine
+    await loadFull(engine);
   }
 
   ngOnInit(): void {

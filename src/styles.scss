@@ -1,13 +1,12 @@
 /* ---------------------------
    1) CSS Variables (Theme)
 ---------------------------- */
-.site-header,
-main,
-footer {
-  position: relative;
-  z-index: 1;
-}
+
+/* Z-layers: particles below, content above */
 :root {
+  --particles-z: 0;
+  --content-z: 1;
+
   /* Colors */
   --color-primary: #0b1b3b;
   --color-accent: #14b8a6;
@@ -52,6 +51,20 @@ footer {
   --section-y-lg: var(--space-96);
 }
 
+/* Keep site above the particles (canvas is z-index: var(--particles-z)) */
+.site-header,
+main,
+footer {
+  position: relative;
+  z-index: var(--content-z);
+}
+
+/* Make the page a full-height stacking context so fixed canvas behaves */
+html,
+body {
+  height: 100%;
+}
+
 /* ---------------------------
    2) Reset & Base
 ---------------------------- */
@@ -60,6 +73,7 @@ footer {
 *::after {
   box-sizing: border-box;
 }
+
 html {
   scroll-behavior: smooth;
 }
@@ -259,10 +273,20 @@ main > section:not(#hero):nth-of-type(even) {
    4) Hero
 ---------------------------- */
 .hero {
-  min-height: var(--hero-height, 70vh);
+  --hero-height: 70vh;
+  min-height: var(--hero-height);
   display: grid;
   align-items: center;
-  background: linear-gradient(135deg, #f4fbff 0%, #eaf8f6 50%, #e6fffb 100%);
+
+  /* Make gradient slightly translucent so particles peek through */
+  background: linear-gradient(
+    135deg,
+    rgba(244, 251, 255, 0.92) 0%,
+    rgba(234, 248, 246, 0.88) 50%,
+    rgba(230, 255, 251, 0.85) 100%
+  );
+  backdrop-filter: saturate(130%) blur(2px);
+
   border-radius: var(--radius-xl);
   overflow: hidden;
   padding: clamp(var(--space-24), 3vw, var(--space-40)) 0;
@@ -282,7 +306,7 @@ main > section:not(#hero):nth-of-type(even) {
 
 @media (max-width: 599px) {
   .hero {
-    min-height: calc(var(--hero-height, 70vh) - 10vh);
+    min-height: calc(var(--hero-height) - 10vh);
   }
 }
 
@@ -314,4 +338,32 @@ main > section:not(#hero):nth-of-type(even) {
   margin: 0 auto var(--space-24);
   color: var(--color-muted);
   max-width: 62ch;
+}
+
+/* ---------------------------
+   6) PARTICLES: fixed, behind, non-interactive
+---------------------------- */
+
+/* Wrapper element from @tsparticles/angular */
+ngx-particles {
+  position: fixed !important;
+  inset: 0;
+  z-index: var(--particles-z); /* 0, below content */
+  pointer-events: none; /* allow clicking your site */
+  display: block;
+}
+
+/* If you used id="tsparticles" on the component */
+#tsparticles {
+  position: fixed !important;
+  inset: 0;
+  z-index: var(--particles-z);
+  pointer-events: none;
+}
+
+/* Canvas itself (belt & suspenders) */
+ngx-particles canvas,
+#tsparticles canvas {
+  position: fixed !important;
+  inset: 0 !important;
 }
